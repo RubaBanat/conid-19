@@ -1,0 +1,31 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../layout/head.ejs') %>
+  <body>
+    <%- include('../layout/header.ejs') %>
+<section>
+    <div class="cards">
+      <h1>
+        Total Confirmed : <p> <%= data.TotalConfirmed %> </p>
+      </h1>
+      <h1>
+        Total Deaths : <p> <%= data.TotalDeaths %> </p>
+      </h1>
+      <h1>
+        Total Recovered: <p> <%= data.TotalRecovered %> </p>
+      </h1>
+    </div>
+    <form action="/getCountryResult " method="GET" class="form1"> 
+    <input type="text" name="country" placeholder="Country Name">
+    <br>
+    <label for="from"> From <input type="date" name="from" id="from"></label>
+    <br>
+    <label for="to"> To <input type="date" name="to" id="to"></label>
+    <br>
+    <button type="submit"> Search </button>
+    </form>
+</section>
+    <%- include('../layout/footer.ejs') %>
+  </body>
+</html>

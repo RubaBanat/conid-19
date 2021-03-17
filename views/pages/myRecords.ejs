@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../layout/head.ejs') %>
+
+    <body>
+        <%- include('../layout/header.ejs') %>
+            <section>
+                <% if (data <= 0 ) {%>
+                    <h1> NO RECORDS AVAILABLE</h1>
+                <% }else{%>
+
+                    <% data.forEach(element=>{%>
+                        <div class="cards">
+                            <h1> <%= element.country %> </h1>
+                         
+                            <p> Date : <%= element.date %>
+                            </p>
+                            <form action="/recordDetails/<%=element.id %> " method="GET"> 
+                                <button type="submit">View Details</button>
+                            
+                            </form>
+                        </div>
+                        <%}) %>
+               <% } %> 
+
+            </section>
+            <%- include('../layout/footer.ejs') %>
+    </body>
+
+</html>

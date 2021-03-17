@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../layout/head.ejs') %>
+
+    <body>
+        <%- include('../layout/header.ejs') %>
+            <section>
+                <% data.forEach(element=>{%>
+
+                    <div class="cards">
+                        <h1> <%= element.country %> </h1>
+                        <p> Date: <%= element.date %>
+                        </p>
+                        <p> Confirmed Cases : <%= element.cases %>
+                        </p>
+
+                    </div>
+                    <%}) %>
+            </section>
+            <%- include('../layout/footer.ejs') %>
+    </body>
+
+</html>
